@@ -11,10 +11,14 @@ public class SearchPage {
 
     }
 
+    @FindBy(id = "onetrust-accept-btn-handler")
+    public WebElement acceptAllCookies;
+
     @FindBy(xpath = "//input[@placeholder='Job title, keywords, or company']")
     public WebElement searchBoxOfJobTitle;
 
     @FindBy(xpath = "//input[@placeholder='city or postcode']")
+    // attribute name is value
     public WebElement searchBoxOfJobLocation;
 
     @FindBy(xpath = "//button[@type='submit']")

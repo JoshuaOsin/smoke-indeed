@@ -53,7 +53,7 @@ access to the object of this class from outside the class
 
             }
             driverPool.get().manage().window().setSize(new Dimension(1420,830));
-            driverPool.get().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            driverPool.get().manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         }
 
         return driverPool.get();

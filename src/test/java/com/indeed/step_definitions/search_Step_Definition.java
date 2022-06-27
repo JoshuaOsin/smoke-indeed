@@ -1,6 +1,7 @@
 package com.indeed.step_definitions;
 
 import com.indeed.pages.SearchPage;
+import com.indeed.utilities.BrowserUtils;
 import com.indeed.utilities.ConfigurationReader;
 import com.indeed.utilities.Driver;
 import io.cucumber.java.en.Given;
@@ -17,21 +18,37 @@ public class search_Step_Definition {
     }
     @When("user types SDET in the job title search box")
     public void user_types_sdet_in_the_job_title_search_box() {
+        //WebDriverWait wait = new WebDriverWait(Driver.getDriver(),30);
+        //wait.until(ExpectedConditions.visibilityOf(searchPage.searchBoxOfJobTitle));
+        searchPage.searchBoxOfJobTitle.clear();
         searchPage.searchBoxOfJobTitle.sendKeys("SDET");
     }
+
+
     @When("user types London in the location search box")
     public void user_types_london_in_the_location_search_box() {
-        searchPage.searchBoxOfJobLocation.sendKeys("London");
+        BrowserUtils.waitForVisibility(searchPage.searchBoxOfJobLocation,15);
+        BrowserUtils.setAttribute(searchPage.searchBoxOfJobLocation,"value","London" );
     }
     @When("user clicks search button")
     public void user_clicks_search_button() {
-        searchPage.searchButton.click();
+        BrowserUtils.waitForVisibility(searchPage.searchButton,15);
+        BrowserUtils.clickWithJS(searchPage.searchButton);
     }
-    @Then("user sees SDET jobs in London on the result")
-    public void user_sees_sdet_jobs_in_london_on_the_result() {
+    @Then("user sees the result")
+    public void user_sees_the_result() {
+        BrowserUtils.waitForClickablility(searchPage.searchResult,15);
         String result = searchPage.searchResult.getText();
-        System.out.println("result = " + result);
+        System.out.println("results = " + result);
     }
+
+    @When("user types {string} in the job title search box")
+    public void userTypesInTheJobTitleSearchBox(String string) {
+        searchPage.searchBoxOfJobTitle.clear();
+        searchPage.searchBoxOfJobTitle.sendKeys(string);
+    }
+
+
 
     /*
           // If you have alert such as google etc.

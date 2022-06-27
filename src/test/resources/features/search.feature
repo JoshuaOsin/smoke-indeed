@@ -7,12 +7,16 @@ Feature: Verify Search Job Functionality on uk.indeed.com
     When user types SDET in the job title search box
     And user types London in the location search box
     And user clicks search button
-    Then user sees SDET jobs in London on the result
+    Then user sees the result
 
- Scenario Template: User Searches Job on Indeed Web Site
-    When user types <Job Title> in the job title search box
-    And user types <Job Location> in the location search box
-    Then user sees results of <Job Title> in <Job Title>
+  @wip
+  Scenario Template: User Searches Job in London on Indeed Web Site
+    When user types "<Job Title>" in the job title search box
+    And user types London in the location search box
+    And user clicks search button
+   Then user sees the result
+#    And user types <Job Location> in the location search box
+#    Then user sees results of <Job Title> in <Job Title>
     Examples:
       | Job Title                 |
       | SDET                      |
@@ -27,13 +31,23 @@ Feature: Verify Search Job Functionality on uk.indeed.com
       | Test Automation Engineer  |
       | Software Engineer in Test |
 
+  Scenario Template: User Searches Job in London on Indeed Web Site
+    When user types "<Job Title>" in the job title search box
+    And user types <Job Location> in the location search box
+    And user clicks search button
+    Then user sees the result
+
     Examples:
-      | Job Location |
-      | London |
-      | Birmingham |
-      | Glasgow |
-      | Liverpool |
-      | Bristol |
-      | Manchester |
-      | Sheffield |
-      | Leeds |
+      | Job Title                 |Job Location |
+      | SDET                      |London,Birmingham,Glasgow,Liverpool,Bristol,Manchester,Sheffield,Leeds |
+      | QA Analyst                |London,Birmingham,Glasgow,Liverpool,Bristol,Manchester,Sheffield,Leeds |
+      | Software Tester           |London,Birmingham,Glasgow,Liverpool,Bristol,Manchester,Sheffield,Leeds |
+      | Automation Tester         |London,Birmingham,Glasgow,Liverpool,Bristol,Manchester,Sheffield,Leeds |
+      | QA Tester                 |London,Birmingham,Glasgow,Liverpool,Bristol,Manchester,Sheffield,Leeds |
+      | Software Test Engineer    |London,Birmingham,Glasgow,Liverpool,Bristol,Manchester,Sheffield,Leeds |
+      | QA Automation Engineer    |London,Birmingham,Glasgow,Liverpool,Bristol,Manchester,Sheffield,Leeds |
+      | QA Engineer               |London,Birmingham,Glasgow,Liverpool,Bristol,Manchester,Sheffield,Leeds |
+      | Automation Test Engineer  |London,Birmingham,Glasgow,Liverpool,Bristol,Manchester,Sheffield,Leeds |
+      | Test Automation Engineer  |London,Birmingham,Glasgow,Liverpool,Bristol,Manchester,Sheffield,Leeds |
+      | Software Engineer in Test |London,Birmingham,Glasgow,Liverpool,Bristol,Manchester,Sheffield,Leeds |
+
