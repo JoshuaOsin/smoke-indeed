@@ -3,7 +3,7 @@ Feature: Verify Search Job Functionality on uk.indeed.com
 
   Background: User has already on the Indeed Web Site
     Given user is on uk.indeed.com search page
-  @METSK-328
+  @regression
   Scenario: User Searches Job on Indeed Web Site
     Given user is on uk.indeed.com search page
     When user types SDET in the job title search box
