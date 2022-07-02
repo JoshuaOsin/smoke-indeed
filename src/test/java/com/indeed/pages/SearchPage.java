@@ -24,6 +24,6 @@ public class SearchPage {
     @FindBy(xpath = "//button[@type='submit']")
     public WebElement searchButton;
 
-    @FindBy (xpath = "//div[@id=\"searchCountPages\"]")
+    @FindBy (xpath = "//div[@id='searchCountPages']")
     public WebElement searchResult;
 }
