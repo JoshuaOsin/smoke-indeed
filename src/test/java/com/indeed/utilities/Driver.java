@@ -74,9 +74,8 @@ public class Driver {
                     }
                     break;
                 case "saucelab-chrome":
-                    // copy url from sourcelab
                     try {
-                        URL url = new URL("https://oauth-joshua-07502:b41441ed-c38d-4f85-b309-0700da0ae5cb@ondemand.eu-central-1.saucelabs.com:443/wd/hub");
+                        URL url = new URL(""); //copy url from sourcelab
                         DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
                         desiredCapabilities.setBrowserName("chrome");
                         driverPool.set(new RemoteWebDriver(url,desiredCapabilities));
