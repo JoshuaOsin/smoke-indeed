@@ -11,6 +11,7 @@ Feature: Verify Search Job Functionality on uk.indeed.com
     And user clicks search button
     Then user sees the result
 
+
   @smoke
   Scenario Template: User Searches Job in London on Indeed Web Site
     When user types "<Job Title>" in the job title search box
