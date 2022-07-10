@@ -47,7 +47,11 @@ public class search_Step_Definition {
         searchPage.searchBoxOfJobTitle.clear();
         searchPage.searchBoxOfJobTitle.sendKeys(string);
     }
-
+    @When("user types {string} in the location search box")
+    public void user_types_in_the_location_search_box(String string) {
+        searchPage.searchBoxOfJobLocation.clear();
+        searchPage.searchBoxOfJobLocation.sendKeys(string);
+    }
 
 
     /*
