@@ -34,7 +34,7 @@ Feature: Verify Search Job Functionality on uk.indeed.com
       | Test Automation Engineer  |
       | Software Engineer in Test |
 
-  @wip
+  @
   Scenario Template: User Searches Job SDET in job locationson Indeed Web Site
     When user types SDET in the job title search box
     And user types "<Job Location>" in the location search box
@@ -74,3 +74,9 @@ Feature: Verify Search Job Functionality on uk.indeed.com
       | Test Automation Engineer  | London,Birmingham,Glasgow,Liverpool,Bristol,Manchester,Sheffield,Leeds |
       | Software Engineer in Test | London,Birmingham,Glasgow,Liverpool,Bristol,Manchester,Sheffield,Leeds |
 
+  @wip @db
+  Scenario: User Searches Job SDET in job locations from database Indeed Web Site
+    When user types SDET in the job title search box
+    And user types lOCATION FROM DATABASE in the location search box
+    And user clicks search button
+    Then user sees the result

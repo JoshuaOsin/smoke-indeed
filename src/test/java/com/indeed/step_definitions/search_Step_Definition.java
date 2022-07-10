@@ -3,10 +3,13 @@ package com.indeed.step_definitions;
 import com.indeed.pages.SearchPage;
 import com.indeed.utilities.BrowserUtils;
 import com.indeed.utilities.ConfigurationReader;
+import com.indeed.utilities.DBUtils;
 import com.indeed.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+
+import java.util.Map;
 
 public class search_Step_Definition {
 
@@ -53,6 +56,24 @@ public class search_Step_Definition {
         searchPage.searchBoxOfJobLocation.sendKeys(string);
     }
 
+    @When("user types lOCATION FROM DATABASE in the location search box")
+    public void user_types_l_ocatıon_from_database_in_the_location_search_box() {
+        DBUtils.createConnection();
+
+        String query = "SELECT CITY_NAME FROM INDEED_LOCATIONS\n" +
+                "WHERE LOC_ID=1";
+
+        Map<String,Object> location = DBUtils.getRowMap(query);
+
+        String city = (String) location.get("CITY_NAME");
+
+        searchPage.searchBoxOfJobLocation.sendKeys(city);
+
+        DBUtils.destroy();
+
+        //HDHDHHH
+
+    }
 
     /*
           // If you have alert such as google etc.
