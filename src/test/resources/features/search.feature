@@ -77,6 +77,6 @@ Feature: Verify Search Job Functionality on uk.indeed.com
   @wip @db
   Scenario: User Searches Job SDET in job locations from database Indeed Web Site
     When user types SDET in the job title search box
-    And user types lOCATION FROM DATABASE in the location search box
+    And user types location from database in the location search box
     And user clicks search button
     Then user sees the result

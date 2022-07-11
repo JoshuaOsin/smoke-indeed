@@ -33,7 +33,14 @@
         </plugins>
     </build>
 
+<profiles>
+    <profile>
+        <id>Smoke</id>
+        <plugins>
 
+        </plugins>
+    </profile>
+</profiles>
 
     <dependencies><!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
         <dependency>

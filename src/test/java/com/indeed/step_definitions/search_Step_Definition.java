@@ -56,12 +56,13 @@ public class search_Step_Definition {
         searchPage.searchBoxOfJobLocation.sendKeys(string);
     }
 
-    @When("user types lOCATION FROM DATABASE in the location search box")
-    public void user_types_l_ocatıon_from_database_in_the_location_search_box() {
+    @When("user types location from database in the location search box")
+    public void user_types_location_from_database_in_the_location_search_box() {
+
         DBUtils.createConnection();
 
-        String query = "SELECT CITY_NAME FROM INDEED_LOCATIONS\n" +
-                "WHERE LOC_ID=1";
+        String query = "SELECT * FROM INDEED_LOCATIONS\n" +
+                "WHERE LOC_ID=2";
 
         Map<String,Object> location = DBUtils.getRowMap(query);
 
@@ -71,7 +72,6 @@ public class search_Step_Definition {
 
         DBUtils.destroy();
 
-        //HDHDHHH
 
     }
 
