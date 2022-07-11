@@ -1,7 +1,9 @@
 package com.indeed.step_definitions;
 
+import com.indeed.utilities.DBUtils;
 import com.indeed.utilities.Driver;
 import io.cucumber.java.After;
+import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -16,5 +18,14 @@ public class Hooks {
             scenario.attach(screenshot, "image/png", scenario.getName());
         }
         Driver.closeDriver();
+    }
+
+    @Before("@db")
+    public void setupDB(){
+        DBUtils.createConnection();
+    }
+    @After ("@db")
+    public void teardownDB() {
+        DBUtils.destroy();
     }
 }
