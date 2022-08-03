@@ -62,7 +62,6 @@ public class search_Step_Definition {
         // custom hook
         //DBUtils.createConnection();
 
-
         String query = "SELECT * FROM INDEED_CITIES WHERE CITY_ID=1";
 
         Map<String,Object> location = DBUtils.getRowMap(query);

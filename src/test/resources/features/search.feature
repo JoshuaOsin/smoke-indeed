@@ -74,7 +74,7 @@ Feature: Verify Search Job Functionality on uk.indeed.com
       | Test Automation Engineer  | London,Birmingham,Glasgow,Liverpool,Bristol,Manchester,Sheffield,Leeds |
       | Software Engineer in Test | London,Birmingham,Glasgow,Liverpool,Bristol,Manchester,Sheffield,Leeds |
 
-  @wip @db
+  @db
   Scenario: User Searches Job SDET in job locations from database Indeed Web Site
     When user types SDET in the job title search box
     And user types location from database in the location search box

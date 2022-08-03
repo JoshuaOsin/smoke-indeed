@@ -32,7 +32,17 @@ public class DBUtils {
             e.printStackTrace();
         }
     }
-
+    public static void createConnectionBookIT() {
+        String dbURL = "jdbc:postgresql://room-reservation-qa3.cxvqfpt4mc2y.us-east-1.rds.amazonaws.com:5432/room_reservation_qa3";
+        String dbUsername = "qa_user";
+        String dbPassword = "Cybertek11!";
+        try {
+            connection = DriverManager.getConnection(dbURL, dbUsername, dbPassword);
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
     public static void createConnectionVtrack() {
         String dbURL = "jdbc:mysql://52.23.232.254:3306/bitnami_orocrm";
         String dbUsername = "qa_user";

@@ -28,4 +28,14 @@ public class Hooks {
     public void teardownDB() {
         DBUtils.destroy();
     }
+
+    @Before("@db2")
+    public void setupDB_BookIT(){
+        DBUtils.createConnectionBookIT();
+    }
+
+    @After ("@db2")
+    public void teardownDB_BookIT() {
+        DBUtils.destroy();
+    }
 }
